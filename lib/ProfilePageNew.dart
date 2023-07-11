@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travelapp/SignInPage.dart';
 import 'ScrollableWidgetPage.dart';
 import 'User.dart';
 import 'RoutesAndPlaces.dart';
@@ -11,30 +12,31 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String username = User.userInfo == '' ? 'username' : User.userInfo;
-
-    List<Widget> widgets = [];
-    for(int route in User.userLikes[username] ?? [0]){
-      widgets.add(RoutesAndPlaces.routes.elementAt(route));
-    }
-
     return Scaffold(
       body: Column(
         children: [
           const SizedBox(height: 16),
           CircleAvatar(
             radius: 64,
-            backgroundImage: NetworkImage(User.userProfilePictures[username] ?? 'https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80'),
+            backgroundImage: NetworkImage("https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"),
           ),
           const SizedBox(height: 16),
           Text(
-            username,
+            User.userInfo == '' ? 'username' : User.userInfo,
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 16),
-          Text(
-              User.userTiers[username] ?? 'usertier',
-            style: TextStyle(fontSize: 16),
+          FloatingActionButton.extended(
+            label: Text('Çıkış Yap'), // <-- Text
+            backgroundColor: Colors.blue,
+            icon: Icon( // <-- Icon
+              Icons.login_outlined,
+              size: 14.0,
+            ),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SignInPage2()));
+            },
           ),
           const SizedBox(height: 16),
           Divider(
@@ -51,7 +53,7 @@ class ProfilePage extends StatelessWidget {
               color: Colors.grey[200],
               child: Center(
                 child: ScrollableWidgetPage(
-                  widgets: widgets,
+                  widgets: RoutesAndPlaces.routes,
                 ),
               ),
             ),
