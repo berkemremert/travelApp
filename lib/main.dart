@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:travelapp/OnboardingPage.dart';
-import 'package:travelapp/ProfilePage.dart';
-import 'package:travelapp/ProfilePageNew.dart';
-import 'package:travelapp/SignInPage.dart';
 import 'PlaceWidget.dart';
 import 'RouteWidget.dart';
 import 'CommentWidget.dart';
@@ -24,8 +21,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      //home: const OnboardingPage1(),
       home: const OnboardingPage1(),
-      //home: const GoogleBottomBar(),
     );
   }
 }
