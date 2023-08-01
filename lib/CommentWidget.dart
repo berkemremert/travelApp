@@ -6,6 +6,7 @@ class CommentWidget extends StatelessWidget {
   final String timestamp;
   final double starRating;
 
+
   CommentWidget({
     required this.username,
     required this.content,
