@@ -1,10 +1,9 @@
 # Takım İsmi
 Traveltopia
 # Takımımız
+- Berk Emre Mert: Developer
 - Seray Öztürk: Scrum master
 - Sena Kuşçuoğlu: Product Owner
-- Buğra Görmüş: Developer
-- Berk Emre Mert: Developer
 - Kevser Karahancı: Developer
 # Ürün İsmi
 Traveltopia
